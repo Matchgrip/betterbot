@@ -6,6 +6,7 @@ var config = require('config'),
 
 // Put some utils on the response handlers object
 _.assign(handlers, {
+  //db: db
 });
 
 var slackConfig = config.get('slack');
