@@ -53,9 +53,10 @@ slack.on('message', function(message) {
     // Order of execution is not guaranteed.
     if (channel.name == 'bottest'){
       if((/we should/i).test(message.text)) {
-        var start = message.text.toLowerCase().indexOf("we should") + 1 + 9;
-        var idea = message.text.substring(start);
-        channel.send("Great idea, " + user.name + "!\n  Maybe we can show Geology how we should " + idea);
+        channel.send("great idea");
+        // var start = message.text.toLowerCase().indexOf("we should") + 1 + 9;
+        // var idea = message.text.substring(start);
+        // channel.send("Great idea, " + user.name + "!\n  Maybe we can show Geology how we should " + idea);
       }
   }
 }
