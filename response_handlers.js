@@ -14,12 +14,12 @@ ResponseHandlers.prototype.logMessageToConsole = function(channel, user, msg) {
   return true;
 };
 
-ResponseHandlers.prototype.greatIdea = function(channel, user, msg) {
-  if((/we should/i).test(msg.text)) {
-    channel.send("Great idea, " + user.name + "!");
-  }
-  return true;
-};
+// ResponseHandlers.prototype.greatIdea = function(channel, user, msg) {
+//   if((/we should/i).test(msg.text)) {
+//     channel.send("Great idea, " + user.name + "!");
+//   }
+//   return true;
+// };
 
 // ResponseHandlers.prototype.doTheSongMeme = function(channel, user, msg) {
 //   var rankThreshold = config.get('bot.songs.rankThreshold');

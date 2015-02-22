@@ -47,13 +47,17 @@ slack.on('message', function(message) {
 
     // This pulls all the functions from ResponseHandlers and calls them with parameters (channel, user, message)
     // Order of execution is not guaranteed.
-    var results = _.chain(_.functions(handlers))
-      .reduce(function(result, fnKey) {
-        var handler = _.bindKey(handlers, fnKey, channel, user, message);
-        result[fnKey] = _.attempt(handler);
-        return result;
-      }, {})
-      .value();
+    if((/we should/i).test(message.text)) {
+    channel.send("Great idea, " + user.name + "!");
+  }
+  return true;
+    // var results = _.chain(_.functions(handlers))
+    //   .reduce(function(result, fnKey) {
+    //     var handler = _.bindKey(handlers, fnKey, channel, user, message);
+    //     result[fnKey] = _.attempt(handler);
+    //     return result;
+    //   }, {})
+    //   .value();
   }
 });
 
