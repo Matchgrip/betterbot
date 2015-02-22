@@ -16,7 +16,7 @@ ResponseHandlers.prototype.logMessageToConsole = function(channel, user, msg) {
 
 ResponseHandlers.prototype.greatIdea = function(channel, user, msg) {
   if(msg.text.indexOf("we should") > -1) {
-    channel.send("Great idea " + user);
+    channel.send("Great idea, " + user.name + "!");
   }
   return true;
 };
