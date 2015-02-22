@@ -50,7 +50,7 @@ slack.on('message', function(message) {
 
     // This pulls all the functions from ResponseHandlers and calls them with parameters (channel, user, message)
     // Order of execution is not guaranteed.
-    if (channel.name == 'testbot'){
+    if (channel.name == 'bottest'){
       if((/we should/i).test(msg.text)) {
         channel.send("Great idea, " + user.name + "!");
       }
