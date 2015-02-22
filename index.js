@@ -48,11 +48,14 @@ slack.on('message', function(message) {
     var channel = slack.getChannelGroupOrDMByID(message.channel);
     var user = slack.getUserByID(message.user);
     console.log("channel : " + channel.name);
+    
     // This pulls all the functions from ResponseHandlers and calls them with parameters (channel, user, message)
     // Order of execution is not guaranteed.
-    if (channel.name == '#bottest'){
-      if((/we should/i).test(msg.text)) {
-        channel.send("Great idea, " + user.name + "!");
+    if (channel.name == 'bottest'){
+      if((/we should/i).test(message.text)) {
+        var start = message.text.toLowerCase().indexOf("we should") + 1 + 9;
+        var idea = message.text.substring(start);
+        channel.send("Great idea, " + user.name + "!\n  Maybe we can show Geology how we should " + idea);
       }
   }
 }
