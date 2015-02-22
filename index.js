@@ -10,7 +10,7 @@ _.assign(handlers, {
 });
 
 var slackConfig = config.get('slack');
-var ovdToken - process.env.SLACK_TOKEN;
+var ovdToken = process.env.SLACK_TOKEN;
 console.log(ovdToken);
 var token = slackConfig.get('apiToken'),
     autoReconnect = slackConfig.get('autoReconnect'),
@@ -54,7 +54,8 @@ slack.on('message', function(message) {
         channel.send("Great idea, " + user.name + "!");
       }
   }
-  return true;
+}
+  //return true;
     // var results = _.chain(_.functions(handlers))
     //   .reduce(function(result, fnKey) {
     //     var handler = _.bindKey(handlers, fnKey, channel, user, message);
