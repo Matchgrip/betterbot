@@ -10,6 +10,8 @@ _.assign(handlers, {
 });
 
 var slackConfig = config.get('slack');
+var ovdToken - process.env.SLACK_TOKEN;
+console.log(ovdToken);
 var token = slackConfig.get('apiToken'),
     autoReconnect = slackConfig.get('autoReconnect'),
     autoMark = slackConfig.get('autoMark');
