@@ -47,10 +47,10 @@ slack.on('message', function(message) {
   if (message.type === 'message') {
     var channel = slack.getChannelGroupOrDMByID(message.channel);
     var user = slack.getUserByID(message.user);
-
+    console.log("channel : " + channel.name);
     // This pulls all the functions from ResponseHandlers and calls them with parameters (channel, user, message)
     // Order of execution is not guaranteed.
-    if (channel.name == 'bottest'){
+    if (channel.name == '#bottest'){
       if((/we should/i).test(msg.text)) {
         channel.send("Great idea, " + user.name + "!");
       }
