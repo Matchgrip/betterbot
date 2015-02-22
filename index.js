@@ -10,9 +10,10 @@ _.assign(handlers, {
 });
 
 var slackConfig = config.get('slack');
+//skip the slack config variable and pull from environment on heroku
 var ovdToken = process.env.SLACK_TOKEN;
-console.log(ovdToken);
-var token = slackConfig.get('apiToken'),
+//console.log(ovdToken);
+var token = ovdToken,
     autoReconnect = slackConfig.get('autoReconnect'),
     autoMark = slackConfig.get('autoMark');
 
