@@ -14,9 +14,9 @@ ResponseHandlers.prototype.logMessageToConsole = function(channel, user, msg) {
   return true;
 };
 
-ResponseHandlers.prototype.sorryIWasEverBorn = function(channel, user, msg) {
-  if(/jeff|hefe/i.test(msg.text)) {
-    channel.send("Sorry I was ever born.");
+ResponseHandlers.prototype.greatIdea = function(channel, user, msg) {
+  if(msg.text.indexOf("we should") > -1) {
+    channel.send("Great idea " + user);
   }
   return true;
 };
