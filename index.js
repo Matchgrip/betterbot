@@ -42,13 +42,15 @@ slack.on('open', function() {
 
 slack.on('message', function(message) {
   if (message.type === 'message') {
-    var channel = slack.getChannelGroupOrDMByID(message.channel),
-        user = slack.getUserByID(message.user);
+    var channel = slack.getChannelGroupOrDMByID(message.channel);
+    var user = slack.getUserByID(message.user);
 
     // This pulls all the functions from ResponseHandlers and calls them with parameters (channel, user, message)
     // Order of execution is not guaranteed.
-    if((/we should/i).test(message.text)) {
-    channel.send("Great idea, " + user.name + "!");
+    if (channel.name == 'testbot'){
+      if((/we should/i).test(msg.text)) {
+        channel.send("Great idea, " + user.name + "!");
+      }
   }
   return true;
     // var results = _.chain(_.functions(handlers))
@@ -58,7 +60,7 @@ slack.on('message', function(message) {
     //     return result;
     //   }, {})
     //   .value();
-  }
+  
 });
 
 slack.on('error', function(error) {
