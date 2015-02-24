@@ -51,14 +51,14 @@ slack.on('message', function(message) {
     
     // This pulls all the functions from ResponseHandlers and calls them with parameters (channel, user, message)
     // Order of execution is not guaranteed.
-    if (channel.name == 'bottest'){
+    //if (channel.name == 'general'){
       if((/we should/i).test(message.text)) {
         channel.send("great idea");
         // var start = message.text.toLowerCase().indexOf("we should") + 1 + 9;
         // var idea = message.text.substring(start);
         // channel.send("Great idea, " + user.name + "!\n  Maybe we can show Geology how we should " + idea);
       }
-  }
+  //}
 }
   //return true;
     // var results = _.chain(_.functions(handlers))
